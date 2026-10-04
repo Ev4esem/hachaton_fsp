@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mochi AI: экраны</title>
+<meta name="theme-color" content="#2d3741">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..700&family=Rubik:wght@500..800&display=swap&subset=cyrillic">
+<link rel="stylesheet" href="../../tokens.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<header class="shell" id="shell" hidden>
+  <div class="shell__in">
+    <a class="wordmark" href="#projects"><img src="../landing/assets/mochi-icon.jpg" width="32" height="32" alt="">Mochi</a>
+    <nav class="shell__nav" aria-label="Разделы">
+      <a href="#projects" data-nav="projects">Проекты</a>
+      <a href="#pricing" data-nav="pricing">Тарифы</a>
+    </nav>
+    <span class="shell__space"></span>
+    <div class="usage num"><span>Осталось <b data-left>4</b> из 5</span><div class="bar"><i data-left-bar style="width:80%"></i></div></div>
+    <span class="avatar" aria-label="Профиль">И</span>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ ВХОД ============ -->
+<section class="screen" id="screen-auth" aria-label="Вход">
+  <div class="auth">
+    <form class="auth__form" id="auth-form">
+      <a class="wordmark" href="#auth"><img src="../landing/assets/mochi-icon.jpg" width="32" height="32" alt="">Mochi</a>
+      <h1 id="auth-title">Войти</h1>
+      <div class="field" id="auth-name-f" hidden><label for="auth-name">Как тебя зовут</label><input class="input" id="auth-name" autocomplete="name"></div>
+      <div class="field"><label for="auth-email">Почта</label><input class="input" id="auth-email" type="email" autocomplete="email" placeholder="you@mail.ru"></div>
+      <div class="field"><label for="auth-pass">Пароль</label><input class="input" id="auth-pass" type="password" autocomplete="current-password"></div>
+      <button class="btn btn--primary" type="submit" id="auth-btn">Войти</button>
+      <p class="auth__switch" id="auth-switch">Нет аккаунта? <button type="button" id="auth-toggle">Зарегистрироваться</button></p>
+    </form>
+    <div class="auth__side"><img src="../landing/assets/mochi-mark.jpg" width="520" height="500" alt="Панда в наушниках, маскот Mochi"></div>
+  </div>
+</section>
+
+<!-- ============ ПРОЕКТЫ ============ -->
+<section class="screen" id="screen-projects" aria-label="Проекты">
+  <div class="page">
+    <div class="page__head">
+      <h1>Проекты</h1>
+      <div class="usage-card num"><span class="muted">Осталось роликов</span><strong><span data-left>4</span> из 5</strong><div class="bar"><i data-left-bar style="width:80%"></i></div></div>
+    </div>
+    <ul class="projects" id="projects-list"></ul>
+  </div>
+</section>
+
+<!-- ============ МАСТЕР ============ -->
+<section class="screen" id="screen-new" aria-label="Новый ролик">
+  <div class="page">
+    <div class="wiz">
+      <ol class="wiz__steps" id="wiz-steps" aria-label="Шаги">
+        <li>Стиль</li><li>Превью</li><li>Видео</li>
+      </ol>
+
+      <div class="step-pane" id="pane-1">
+        <h1 class="wiz__title">Выбери стиль</h1>
+        <fieldset><legend class="sr">Стиль субтитров</legend><div class="styles" id="styles"></div></fieldset>
+        <div class="field">
+          <label for="blogger">Или возьми стиль у блогера</label>
+          <div class="link-row">
+            <input class="input" id="blogger" type="url" inputmode="url" placeholder="Ссылка на YouTube, TikTok или Instagram" autocomplete="off">
+            <button class="btn btn--ghost" type="button" id="blogger-btn">Разобрать</button>
+          </div>
+          <div class="found" id="found" hidden></div>
+        </div>
+      </div>
+
+      <div class="step-pane" id="pane-2">
+        <h1 class="wiz__title">Так это будет выглядеть</h1>
+        <div class="split">
+          <div class="vid" id="pv" data-frame="1"><span class="vid__tag">кадр-пример</span><span id="pv-cap"></span></div>
+          <div class="opts">
+            <fieldset class="field"><legend class="label">Кадр</legend><div class="seg" id="seg-frame">
+              <label><input type="radio" name="frame" value="1" checked><span>1</span></label><label><input type="radio" name="frame" value="2"><span>2</span></label><label><input type="radio" name="frame" value="3"><span>3</span></label></div></fieldset>
+            <fieldset class="field"><legend class="label">Размер субтитров</legend><div class="seg" id="seg-size">
+              <label><input type="radio" name="size" value="0.8"><span>Мелкие</span></label><label><input type="radio" name="size" value="1" checked><span>Средние</span></label><label><input type="radio" name="size" value="1.3"><span>Крупные</span></label></div></fieldset>
+            <fieldset class="field"><legend class="label">Положение</legend><div class="seg" id="seg-pos">
+              <label><input type="radio" name="pos" value="bottom" checked><span>Снизу</span></label><label><input type="radio" name="pos" value="center"><span>По центру</span></label></div></fieldset>
+            <fieldset class="field"><legend class="label">Цвет акцента</legend><div class="seg" id="seg-color">
+              <label><input type="radio" name="color" value="--color-accent" checked><span class="swatch" aria-label="Оранжевый"><i style="background:var(--color-accent)"></i></span></label>
+              <label><input type="radio" name="color" value="--color-signal"><span class="swatch" aria-label="Голубой"><i style="background:var(--color-signal)"></i></span></label>
+              <label><input type="radio" name="color" value="--color-ink"><span class="swatch" aria-label="Белый"><i style="background:var(--color-ink)"></i></span></label>
+              <label><input type="radio" name="color" value="--color-success"><span class="swatch" aria-label="Мятный"><i style="background:var(--color-success)"></i></span></label></div></fieldset>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-pane" id="pane-3">
+        <h1 class="wiz__title">Загрузи видео</h1>
+        <label class="drop" id="drop" for="file-in">
+          <strong>Перетащи файлы сюда</strong><span>или нажми, чтобы выбрать</span>
+          <input id="file-in" class="sr" type="file" accept="video/*" multiple>
+        </label>
+        <ol class="files" id="files" aria-label="Порядок файлов"></ol>
+        <div class="meter num" id="meter"><div class="meter__row"><span id="meter-t">0:00</span><span class="dim">из 5:00</span></div><div class="bar"><i id="meter-b"></i></div><p class="meter__warn" id="meter-w" hidden>Многовато. Убери файл, чтобы вышло до 5 минут.</p></div>
+        <fieldset class="field"><legend class="label">Формат ролика</legend><div class="seg" id="seg-format">
+          <label><input type="radio" name="format" value="9x16" checked><span>9:16 вертикальный</span></label><label><input type="radio" name="format" value="16x9"><span>16:9 горизонтальный</span></label></div></fieldset>
+      </div>
+
+      <div class="wiz__foot">
+        <button class="btn btn--ghost" type="button" id="wiz-back">Назад</button>
+        <button class="btn btn--primary" type="button" id="wiz-next">Дальше</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ОБРАБОТКА ============ -->
+<section class="screen" id="screen-proc" aria-label="Монтаж">
+  <div class="page">
+    <div class="proc">
+      <div class="vid" id="proc-vid"><span class="vid__tag">кадр-пример</span><span id="proc-cap"></span></div>
+      <div class="wiz" style="gap:var(--space-lg)">
+        <h1 class="wiz__title">Mochi монтирует</h1>
+        <ul class="steps" id="proc-steps"></ul>
+        <div class="bar"><i id="proc-bar" style="width:0"></i></div>
+        <div><button class="btn btn--ghost" type="button" id="proc-cancel">Отменить</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ РЕДАКТОР ============ -->
+<section class="screen" id="screen-editor" aria-label="Редактор ролика">
+  <div class="edr">
+    <div class="edr__bar">
+      <a class="btn btn--ghost btn--icon" href="#projects" aria-label="К проектам"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+      <label class="sr" for="ed-title">Название ролика</label>
+      <input class="edr__title" id="ed-title" value="Мой первый ролик">
+      <button class="btn btn--primary" type="button" id="ed-export">Экспорт</button>
+    </div>
+    <div class="edr__main">
+      <div class="panel edr__prev">
+        <div class="player">
+          <div class="vid" id="ed-vid"><span class="vid__tag">кадр-пример</span><span id="ed-cap"></span></div>
+          <div class="player__ctl">
+            <button class="btn btn--primary btn--icon" type="button" id="play" aria-label="Играть"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <input class="scrub" id="scrub" type="range" min="0" max="24" step="0.1" value="0" aria-label="Позиция">
+            <span class="time" id="time">0:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="panel edr__subs">
+        <h2 class="panel__title">Субтитры</h2>
+        <ul class="lines" id="lines"></ul>
+        <p class="hint">Оранжевым отмечено слово, в котором Mochi не уверена. Проверь его.</p>
+      </div>
+      <div class="panel edr__chat">
+        <h2 class="panel__title">Попроси Mochi</h2>
+        <div class="chat" id="chat" aria-live="polite"></div>
+        <div class="chips"><button class="chip" type="button">Убрать паузы</button><button class="chip" type="button">Субтитры крупнее</button><button class="chip" type="button">Другой стиль</button></div>
+        <form class="ask" id="ask"><label class="sr" for="ask-in">Что изменить</label><input class="input" id="ask-in" placeholder="Что изменить?" autocomplete="off"><button class="btn btn--primary btn--icon" type="submit" aria-label="Отправить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></form>
+      </div>
+      <div class="panel edr__tl tl">
+        <div class="tl__tools">
+          <h2 class="panel__title" style="margin-inline-end:auto">Таймлайн</h2>
+          <button class="btn btn--ghost btn--sm" type="button" id="tl-split">Разрезать</button>
+          <button class="btn btn--ghost btn--sm" type="button" id="tl-del">Удалить</button>
+        </div>
+        <div class="tl__row"><span class="tl__name">Видео</span><div class="tl__lane" id="lane-v"></div></div>
+        <div class="tl__row"><span class="tl__name">Титры</span><div class="tl__lane" id="lane-s"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ТАРИФЫ ============ -->
+<section class="screen" id="screen-pricing" aria-label="Тарифы">
+  <div class="page">
+    <div class="page__head"><h1>Тарифы</h1></div>
+    <ul class="plans" id="plans"></ul>
+  </div>
+</section>
+
+</main>
+
+<nav class="tabbar" id="tabbar" aria-label="Разделы" hidden>
+  <a href="#projects" data-nav="projects">Проекты</a>
+  <a href="#new" data-nav="new">Новый</a>
+  <a href="#pricing" data-nav="pricing">Тарифы</a>
+</nav>
+
+<details class="proto">
+  <summary>Экраны</summary>
+  <nav aria-label="Переключатель экранов (только для прототипа)">
+    <a href="#auth">Вход</a><a href="#projects">Проекты</a><a href="#new">Новый ролик</a><a href="#proc">Монтаж</a><a href="#editor">Редактор</a><a href="#pricing">Тарифы</a>
+  </nav>
+</details>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal__card" id="modal-card"></div></div>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
