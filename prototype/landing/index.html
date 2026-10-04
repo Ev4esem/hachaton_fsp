@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mochi AI</title>
-<meta name="description" content="Закинь видео, а Mochi нарежет, подпишет и соберёт ролик под твой стиль. Дальше поправишь сам или попросишь панду.">
+<meta name="description" content="Закинь видео, а Mochi нарежет, подпишет и соберёт ролик под твой стиль.">
 <meta name="theme-color" content="#2d3741">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +16,8 @@
 
 <nav class="nav-pill" aria-label="Основная навигация">
   <a class="wordmark" href="#top"><img src="assets/mochi-icon.jpg" width="30" height="30" alt="">Mochi</a>
-  <ul class="nav-pill__links">
-    <li><a href="#how">Как работает</a></li>
-    <li><a href="#plans">Тарифы</a></li>
-  </ul>
-  <a class="btn btn--primary" href="#step-1">Создать</a>
+  <a class="nav-pill__link" href="#plans">Тарифы</a>
+  <a class="btn btn--primary btn--sm" href="#step-1">Создать ролик</a>
 </nav>
 
 <main id="top">
@@ -29,20 +26,35 @@
     <div class="wrap hero__grid">
       <div class="hero__copy">
         <h1>Закинь видео. Забери готовый ролик.</h1>
-        <p class="hero__lede">Mochi нарежет, подпишет и соберёт шортс под твой стиль. Что не так, поправишь сам или попросишь панду.</p>
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="#step-1">Создать ролик</a>
-          <a class="btn btn--ghost" href="#how">Как это работает</a>
-        </div>
-        <ul class="hero__facts" aria-label="Что нужно знать">
-          <li>Русская речь</li>
-          <li>До 5 минут</li>
-          <li>9:16 и 16:9</li>
-        </ul>
+        <p class="hero__lede">Mochi сама нарежет, подпишет и соберёт ролик в твоём стиле.</p>
+        <a class="btn btn--primary btn--lg" href="#step-1">Создать ролик</a>
       </div>
-      <figure class="plate">
-        <img src="assets/mochi-mark.jpg" width="520" height="500" alt="Панда в наушниках с неоновой звуковой волной, маскот Mochi">
-      </figure>
+
+      <div class="app" role="group" aria-label="Редактор ролика: пример экрана">
+        <div class="app__bar"><ol class="app__steps" aria-label="Шаги"><li>Стиль</li><li>Видео</li><li>Монтаж</li><li aria-current="step">Правка</li></ol><button class="btn btn--primary btn--sm" type="button">Скачать</button></div>
+        <div class="ed">
+          <div class="vid"><span class="cap cap--loud">Это <b>уже</b> в кадре</span></div>
+          <div class="ed__side">
+            <ul class="lines">
+              <li class="line"><time>0:01</time><span>Всем привет</span></li>
+              <li class="line line--fix"><time>0:03</time><span>Сегодня расскажу про монтаж</span></li>
+              <li class="line line--hide-s"><time>0:06</time><span>Это проще, чем кажется</span></li>
+            </ul>
+            <div class="chat">
+              <p class="bubble bubble--you">Убери паузу в начале</p>
+              <p class="bubble bubble--ai">Готово, паузу вырезала.</p>
+            </div>
+          </div>
+          <div class="tl" role="img" aria-label="Таймлайн ролика">
+            <div class="lane">
+              <span class="clip" style="flex:3">1</span>
+              <span class="clip clip--on" style="flex:2">2</span>
+              <span class="clip" style="flex:3">3</span>
+              <span class="playhead"></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -50,72 +62,49 @@
     <path d="M0 20 H300 L316 20 L326 6 L338 34 L350 10 L360 28 L370 20 H800"/>
   </svg>
 
-  <section class="stages" id="how" aria-labelledby="how-title">
+  <section class="stages" id="how" aria-label="Как это работает">
     <div class="wrap">
-      <div class="stages__intro">
-        <h2 id="how-title">Четыре шага от файла до ролика</h2>
-        <p>Ты выбираешь стиль и загружаешь видео. Дальше работает Mochi, а в конце ты сам решаешь, что оставить.</p>
-      </div>
 
-      <!-- 1.0 -->
       <article class="stage" id="step-1">
         <div class="stage__rule"></div>
         <div class="stage__grid">
           <div class="stage__text">
-            <span class="stage__num mono" aria-hidden="true">1.0</span>
+            <span class="stage__num num" aria-hidden="true">1.0</span>
             <h3>Выбери стиль</h3>
-            <p>Возьми готовый шаблон или вставь ссылку на блогера, чей монтаж тебе нравится. Mochi посмотрит видео и соберёт похожий стиль.</p>
-            <p class="stage__note">Перед загрузкой покажем, как субтитры и темп выглядят на кадрах.</p>
+            <p>Шаблон или ссылка на блогера.</p>
           </div>
-          <div class="surface">
+          <div class="app" role="group" aria-label="Выбор стиля: пример экрана">
+            <div class="app__bar"><ol class="app__steps" aria-label="Шаги"><li aria-current="step">Стиль</li><li>Видео</li><li>Монтаж</li><li>Правка</li></ol></div>
             <fieldset style="border:0;padding:0;margin:0;min-width:0">
-              <legend class="tag" style="padding:0;margin-block-end:var(--space-md)">Пример: три стиля субтитров</legend>
+              <legend class="sr">Стиль субтитров</legend>
               <div class="styles">
-                <label class="style-opt">
-                  <input type="radio" name="style" value="loud" checked>
-                  <span class="frame"><span class="frame__label">кадр-пример</span><span class="cap cap--loud">Это <b>уже</b> в кадре</span></span>
-                  <span class="style-opt__name">Громко</span>
-                  <span class="style-opt__desc">Крупные слова, активное слово светится.</span>
-                </label>
-                <label class="style-opt">
-                  <input type="radio" name="style" value="quiet">
-                  <span class="frame"><span class="frame__label">кадр-пример</span><span class="cap cap--quiet">Это уже в кадре</span></span>
-                  <span class="style-opt__name">Тихо</span>
-                  <span class="style-opt__desc">Аккуратная плашка, ничего лишнего.</span>
-                </label>
-                <label class="style-opt">
-                  <input type="radio" name="style" value="mark">
-                  <span class="frame"><span class="frame__label">кадр-пример</span><span class="cap cap--mark"><span>Это уже</span> в кадре</span></span>
-                  <span class="style-opt__name">Маркер</span>
-                  <span class="style-opt__desc">Подсветка как маркером по тексту.</span>
-                </label>
+              <label class="style-opt"><input type="radio" name="style" value="loud" checked><span class="frame"><span class="cap cap--loud">Это <b>уже</b> в кадре</span></span><span class="style-opt__name">Громко</span></label>
+              <label class="style-opt"><input type="radio" name="style" value="quiet"><span class="frame"><span class="cap cap--quiet">Это уже в кадре</span></span><span class="style-opt__name">Тихо</span></label>
+              <label class="style-opt"><input type="radio" name="style" value="mark"><span class="frame"><span class="cap cap--mark"><span>Это уже</span> в кадре</span></span><span class="style-opt__name">Маркер</span></label>
+              <label class="style-opt"><input type="radio" name="style" value="outline"><span class="frame"><span class="cap cap--outline">Это уже в кадре</span></span><span class="style-opt__name">Контур</span></label>
+              <label class="style-opt"><input type="radio" name="style" value="box"><span class="frame"><span class="cap cap--box">Это уже в кадре</span></span><span class="style-opt__name">Рамка</span></label>
+              <label class="style-opt"><input type="radio" name="style" value="stack"><span class="frame"><span class="cap cap--stack"><i>Это уже</i><span>в кадре</span></span></span><span class="style-opt__name">Блок</span></label>
               </div>
             </fieldset>
-            <div class="link-field-wrap">
-              <div class="link-field" style="flex-direction:column;gap:0">
-                <label class="tag" for="blogger-link">Или ссылка на блогера</label>
-                <div style="display:flex;gap:var(--space-xs)">
-                  <input id="blogger-link" type="url" inputmode="url" placeholder="Ссылка на YouTube, TikTok или Instagram" autocomplete="off">
-                  <button class="btn btn--ghost" type="button">Разобрать</button>
-                </div>
-              </div>
+            <div class="link-field">
+              <label class="sr" for="blogger-link">Ссылка на блогера</label>
+              <input id="blogger-link" type="url" inputmode="url" placeholder="Ссылка на блогера" autocomplete="off">
+              <button class="btn btn--ghost" type="button">Взять стиль</button>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- 2.0 -->
       <article class="stage" id="step-2">
         <div class="stage__rule"></div>
         <div class="stage__grid">
           <div class="stage__text">
-            <span class="stage__num mono" aria-hidden="true">2.0</span>
+            <span class="stage__num num" aria-hidden="true">2.0</span>
             <h3>Загрузи видео</h3>
-            <p>Один файл или несколько. Если файлов несколько, порядок задаёшь ты, Mochi склеит их в один ролик. Всего до 5 минут.</p>
-            <p class="stage__note">Выбери формат: вертикальный для Reels и Shorts или горизонтальный.</p>
+            <p>Один файл или несколько. До 5 минут.</p>
           </div>
-          <div class="surface drop">
-            <span class="tag">Пример загрузки</span>
+          <div class="app" role="group" aria-label="Загрузка видео: пример экрана">
+            <div class="app__bar"><ol class="app__steps" aria-label="Шаги"><li>Стиль</li><li aria-current="step">Видео</li><li>Монтаж</li><li>Правка</li></ol></div>
             <ol class="files" aria-label="Порядок файлов">
               <li class="file"><span class="file__grip" aria-hidden="true"><svg width="14" height="18" viewBox="0 0 14 18" fill="currentColor"><circle cx="4" cy="3" r="1.5"/><circle cx="10" cy="3" r="1.5"/><circle cx="4" cy="9" r="1.5"/><circle cx="10" cy="9" r="1.5"/><circle cx="4" cy="15" r="1.5"/><circle cx="10" cy="15" r="1.5"/></svg></span><span class="file__name">дубль-1.mp4</span><span class="file__len">1:10</span></li>
               <li class="file"><span class="file__grip" aria-hidden="true"><svg width="14" height="18" viewBox="0 0 14 18" fill="currentColor"><circle cx="4" cy="3" r="1.5"/><circle cx="10" cy="3" r="1.5"/><circle cx="4" cy="9" r="1.5"/><circle cx="10" cy="9" r="1.5"/><circle cx="4" cy="15" r="1.5"/><circle cx="10" cy="15" r="1.5"/></svg></span><span class="file__name">дубль-2.mp4</span><span class="file__len">0:55</span></li>
@@ -132,154 +121,100 @@
                 <label class="format format--wide"><input type="radio" name="format" value="16x9"><span>16:9</span></label>
               </div>
             </fieldset>
+            <div class="app__foot"><button class="btn btn--primary" type="button">Монтировать</button></div>
           </div>
         </div>
       </article>
 
-      <!-- 3.0 -->
       <article class="stage" id="step-3">
         <div class="stage__rule"></div>
         <div class="stage__grid">
           <div class="stage__text">
-            <span class="stage__num mono" aria-hidden="true">3.0</span>
+            <span class="stage__num num" aria-hidden="true">3.0</span>
             <h3>Mochi монтирует</h3>
-            <p>Слушает речь, режет паузы и оговорки, ставит субтитры и собирает ролик. Ты видишь, на каком шаге она сейчас.</p>
-            <p class="stage__note">Звук остаётся твоим. Озвучку мы не добавляем.</p>
+            <p>Режет паузы, ставит субтитры, собирает ролик.</p>
           </div>
-          <div class="surface">
-            <span class="tag" style="display:block;margin-block-end:var(--space-md)">Пример прогресса</span>
-            <ul class="steps">
-              <li class="step step--done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg><span>Слушаю речь</span><small>готово</small></li>
-              <li class="step step--done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg><span>Режу паузы и оговорки</span><small>готово</small></li>
-              <li class="step"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Ставлю субтитры</span><small>в работе</small></li>
-              <li class="step step--todo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg><span>Собираю ролик в твоём стиле</span><small>дальше</small></li>
-            </ul>
+          <div class="app" role="group" aria-label="Монтаж: пример экрана">
+            <div class="app__bar"><ol class="app__steps" aria-label="Шаги"><li>Стиль</li><li>Видео</li><li aria-current="step">Монтаж</li><li>Правка</li></ol></div>
+            <div class="gen">
+              <div class="vid"><span class="cap cap--loud">Это <b>уже</b> в кадре</span></div>
+              <ul class="steps">
+                <li class="step step--done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg><span>Слушаю речь</span></li>
+                <li class="step step--done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg><span>Режу паузы</span></li>
+                <li class="step"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Ставлю субтитры</span></li>
+                <li class="step step--todo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg><span>Собираю ролик</span></li>
+              </ul>
+            </div>
           </div>
         </div>
       </article>
 
-      <!-- 4.0 -->
       <article class="stage" id="step-4">
         <div class="stage__rule"></div>
         <div class="stage__grid">
           <div class="stage__text">
-            <span class="stage__num mono" aria-hidden="true">4.0</span>
-            <h3>Поправь и скачай</h3>
-            <p>Нейросеть иногда ошибается в словах или режет не там. Поэтому ролик открывается в редакторе: режь, двигай куски, правь субтитры. Или напиши панде, что изменить.</p>
-            <p class="stage__note">Всё устраивает? Скачай готовый ролик.</p>
+            <span class="stage__num num" aria-hidden="true">4.0</span>
+            <h3>Поправь словами</h3>
+            <p>Напиши, что изменить. Или правь вручную.</p>
           </div>
-          <div class="surface editor">
-            <span class="tag">Пример редактора</span>
-            <div class="track" role="img" aria-label="Таймлайн: видеодорожка и дорожка субтитров">
-              <div class="track__row"><span class="track__name">видео</span>
-                <div class="lane">
-                  <span class="clip" style="flex:3">дубль-1</span>
-                  <span class="clip clip--on" style="flex:2">дубль-2</span>
-                  <span class="clip" style="flex:3">дубль-3</span>
-                  <span class="playhead"></span>
+          <div class="app" role="group" aria-label="Чат с Mochi: пример экрана">
+            <div class="app__bar"><ol class="app__steps" aria-label="Шаги"><li>Стиль</li><li>Видео</li><li>Монтаж</li><li aria-current="step">Правка</li></ol><button class="btn btn--primary btn--sm" type="button">Скачать</button></div>
+            <div class="ask-grid">
+              <div class="vid"><span class="cap cap--loud">Это <b>уже</b> в кадре</span></div>
+              <div class="chat" style="align-content:end">
+                <p class="bubble bubble--you">Сделай субтитры крупнее</p>
+                <p class="bubble bubble--ai">Готово. Посмотри ещё раз.</p>
+                <div class="chips">
+                  <button class="chip" type="button">Убрать паузы</button>
+                  <button class="chip" type="button">Другой стиль</button>
                 </div>
+                <form class="ask" onsubmit="return false">
+                  <label class="sr" for="ask-input">Что изменить</label>
+                  <input id="ask-input" type="text" placeholder="Что изменить?" autocomplete="off">
+                  <button class="btn btn--primary" type="submit" aria-label="Отправить">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </button>
+                </form>
               </div>
-              <div class="track__row"><span class="track__name">титры</span>
-                <div class="lane words">
-                  <span class="clip" style="flex:2">Всем</span>
-                  <span class="clip" style="flex:3">привет</span>
-                  <span class="clip clip--fix" style="flex:3">сегодня</span>
-                  <span class="clip" style="flex:2">про</span>
-                  <span class="clip" style="flex:3">монтаж</span>
-                </div>
-              </div>
-            </div>
-            <div class="chat">
-              <p class="bubble bubble--you">Убери паузу в начале и сделай субтитры крупнее</p>
-              <p class="bubble bubble--ai">Готово. Паузу вырезала, субтитры стали крупнее. Посмотри ещё раз.</p>
             </div>
           </div>
         </div>
       </article>
+
     </div>
   </section>
 
   <section class="reels" aria-labelledby="reels-title">
     <div class="wrap">
-      <div class="reels__head">
-        <h2 id="reels-title">Ролики, которые сделала Mochi</h2>
-        <p>Здесь появятся готовые вертикальные ролики из реальных проектов.</p>
-      </div>
+      <h2 id="reels-title">Ролики, сделанные в Mochi</h2>
       <div class="reels__row">
-        <figure class="reel"><span class="reel__label">место под ролик</span><span class="cap cap--loud">Это <b>уже</b> в кадре</span></figure>
-        <figure class="reel"><span class="reel__label">место под ролик</span><span class="cap cap--quiet">Это уже в кадре</span></figure>
-        <figure class="reel"><span class="reel__label">место под ролик</span><span class="cap cap--mark"><span>Это уже</span> в кадре</span></figure>
+        <figure class="reel"><span class="cap cap--loud">Это <b>уже</b> в кадре</span></figure>
+        <figure class="reel"><span class="cap cap--quiet">Это уже в кадре</span></figure>
+        <figure class="reel"><span class="cap cap--mark"><span>Это уже</span> в кадре</span></figure>
       </div>
-    </div>
-  </section>
-
-  <section class="go" aria-labelledby="go-title">
-    <div class="wrap go__row">
-      <h2 id="go-title">Начни с первого шага</h2>
-      <a class="btn btn--primary" href="#step-1">Создать ролик</a>
     </div>
   </section>
 
   <section class="pricing" id="plans" aria-labelledby="plans-title">
     <div class="wrap">
-      <div class="pricing__head">
-        <h2 id="plans-title">Сколько роликов тебе нужно в месяц</h2>
-        <p>Один тариф равен числу готовых роликов. Редактировать и перемонтировать внутри ролика можно без доплат.</p>
-      </div>
+      <h2 id="plans-title">Тарифы</h2>
       <ul class="plans">
-        <li class="plan">
-          <span class="plan__name">Пробный<small>Попробовать на своём видео</small></span>
-          <span class="plan__n">1 ролик</span>
-          <span class="plan__price">бесплатно</span>
-          <a class="btn btn--ghost" href="#step-1">Попробовать</a>
-        </li>
-        <li class="plan">
-          <span class="plan__name">Старт</span>
-          <span class="plan__n">5 роликов</span>
-          <span class="plan__price">— ₽ в месяц</span>
-          <a class="btn btn--ghost" href="#step-1">Выбрать</a>
-        </li>
-        <li class="plan plan--pick">
-          <span class="plan__name">Блогер<small>Для регулярного блога</small></span>
-          <span class="plan__n">20 роликов</span>
-          <span class="plan__price">— ₽ в месяц</span>
-          <a class="btn btn--primary" href="#step-1">Выбрать</a>
-        </li>
-        <li class="plan">
-          <span class="plan__name">Про</span>
-          <span class="plan__n">50 роликов</span>
-          <span class="plan__price">— ₽ в месяц</span>
-          <a class="btn btn--ghost" href="#step-1">Выбрать</a>
-        </li>
+        <li class="plan"><span class="plan__name">Пробный</span><span class="plan__n">1 ролик</span><span class="plan__price">бесплатно</span><a class="btn btn--ghost" href="#step-1">Попробовать</a></li>
+        <li class="plan"><span class="plan__name">Старт</span><span class="plan__n">5 роликов</span><span class="plan__price">— ₽ в месяц</span><a class="btn btn--ghost" href="#step-1">Выбрать</a></li>
+        <li class="plan plan--pick"><span class="plan__name">Блогер</span><span class="plan__n">20 роликов</span><span class="plan__price">— ₽ в месяц</span><a class="btn btn--primary" href="#step-1">Выбрать</a></li>
+        <li class="plan"><span class="plan__name">Про</span><span class="plan__n">50 роликов</span><span class="plan__price">— ₽ в месяц</span><a class="btn btn--ghost" href="#step-1">Выбрать</a></li>
       </ul>
-      <p class="pricing__foot">Цены и лимиты уточним перед запуском. Сейчас это черновик.</p>
     </div>
   </section>
 
   <section class="faq" aria-labelledby="faq-title">
     <div class="wrap">
-      <h2 id="faq-title">Вопросы, которые задают чаще всего</h2>
+      <h2 id="faq-title">Вопросы</h2>
       <div class="faq__list">
-        <details>
-          <summary>Какой язык поддерживается?</summary>
-          <p>Пока только русский. Субтитры и нарезка работают по русской речи.</p>
-        </details>
-        <details>
-          <summary>Какой длины может быть видео?</summary>
-          <p>Суммарно до 5 минут на один ролик. Счётчик покажет, сколько ещё можно загрузить.</p>
-        </details>
-        <details>
-          <summary>Можно загрузить несколько файлов?</summary>
-          <p>Да. Порядок задаёшь ты, перетаскивая файлы. Mochi склеит их в один ролик и приведёт к одному стилю.</p>
-        </details>
-        <details>
-          <summary>Что, если Mochi ошиблась в словах?</summary>
-          <p>Открой ролик в редакторе и поправь субтитры руками. Или напиши панде, что именно исправить.</p>
-        </details>
-        <details>
-          <summary>Вы меняете мой голос или добавляете озвучку?</summary>
-          <p>Нет. Звук остаётся твоим, мы работаем только с нарезкой, субтитрами и стилем.</p>
-        </details>
+        <details><summary>Какой язык?</summary><p>Русский.</p></details>
+        <details><summary>Какой длины видео?</summary><p>До 5 минут суммарно.</p></details>
+        <details><summary>Если Mochi ошиблась?</summary><p>Поправь в редакторе или напиши, что исправить.</p></details>
+        <details><summary>Вы меняете мой звук?</summary><p>Нет, звук остаётся твоим.</p></details>
       </div>
     </div>
   </section>
@@ -288,6 +223,7 @@
 
 <footer class="wrap foot-stmt">
   <p class="foot-stmt__line">Закинь видео. Остальное доделает панда.</p>
+  <a class="btn btn--primary btn--lg" href="#step-1">Создать ролик</a>
   <div class="foot-stmt__meta">
     <a class="wordmark" href="#top"><img src="assets/mochi-icon.jpg" width="30" height="30" alt="">Mochi</a>
     <span>© 2026 Mochi AI</span>
