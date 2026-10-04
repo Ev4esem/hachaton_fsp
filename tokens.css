@@ -20,9 +20,8 @@
   --color-success:      oklch(0.80 0.140 160);
   --color-error:        oklch(0.72 0.170 25);
 
-  --font-display: "Unbounded", "Onest", system-ui, sans-serif;
-  --font-body:    "Onest", system-ui, sans-serif;
-  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Rubik", "Golos Text", system-ui, sans-serif;
+  --font-body:    "Golos Text", system-ui, sans-serif;
 
   /* 4-pt spacing scale */
   --space-3xs: 0.125rem;
@@ -37,10 +36,10 @@
   --space-4xl: 9rem;
 
   /* Type scale, 1.25 ratio */
-  --text-xs:   0.8rem;
-  --text-sm:   0.9rem;
-  --text-base: 1.0625rem;
-  --text-lg:   1.3rem;
+  --text-xs:   0.9375rem;
+  --text-sm:   1rem;
+  --text-base: 1.125rem;
+  --text-lg:   1.375rem;
   --text-xl:   1.625rem;
   --text-2xl:  2.05rem;
   --text-3xl:  2.5rem;
